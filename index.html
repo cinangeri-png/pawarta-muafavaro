@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="jv" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&A Newsroom | Tegalsari Update – Pawarta Basa Jawi</title>
+<meta name="description" content="Pawarta eksklusif: galon bekas dados pot kembang ing Dusun Tegalsari, Pakem, Yogyakarta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+/* ======= ISI BAGIAN INI SUPAYA VIDEO & FOTO TAMPIL UNTUK SEMUA ORANG ======= */
+const SITE = {
+  youtubeId: 'wBM7LwpmFCw?si=fShtH164LcS-Ficf',          // contoh: 'dQw4w9WgXcQ'  (11 karakter dari link YouTube)
+  photos: ['afa.jpg', 'varo.jpg']        // contoh: ['muafa.jpg', 'alvaro.jpg']  (simpan 1 folder dengan index.html)
+};
+/* ============================================================================ */
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter','system-ui','sans-serif'], serif: ['"Playfair Display"','Georgia','serif'] },
+      colors: {
+        ink: '#0f1613',
+        charcoal: '#161e1a',
+        slate2: '#1f2a25',
+        sage: { 300:'#b7cdb9', 400:'#93b496', 500:'#7a9e7e' },
+        emerald2: { 400:'#34d399', 500:'#10b981', 600:'#059669' },
+        sand: '#e9e4d4'
+      }
+    }
+  }
+}
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+  html, body { overflow-x: hidden; max-width: 100%; }
+  body { background: #0f1613; color: #e9efe9; -webkit-font-smoothing: antialiased; }
+  .bg-aurora {
+    background:
+      radial-gradient(60rem 30rem at 10% -10%, rgba(16,185,129,.18), transparent 60%),
+      radial-gradient(50rem 28rem at 100% 10%, rgba(122,158,126,.14), transparent 60%),
+      radial-gradient(40rem 30rem at 50% 110%, rgba(16,185,129,.10), transparent 60%),
+      #0f1613;
+  }
+  .glass { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.09); }
+  .glass-strong { background: #18211d; border: 1px solid rgba(255,255,255,.10); }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker-track { display: flex; width: max-content; animation: ticker 38s linear infinite; will-change: transform; }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+  @keyframes pulseRing { 0%,100% { opacity:1;} 50% { opacity:.35;} }
+  .live-dot { animation: pulseRing 1.8s infinite; }
+  @keyframes floaty { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
+  .floaty { animation: floaty 7s ease-in-out infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .caret { display:inline-block; width:3px; height:1em; background:#34d399; margin-left:4px; vertical-align:-0.1em; animation: blink 1s steps(1) infinite; }
+  .bars { background: linear-gradient(90deg,#c0c0c0 0 14.28%,#c0c000 0 28.56%,#00c0c0 0 42.84%,#00c000 0 57.12%,#c000c0 0 71.4%,#c00000 0 85.68%,#0000c0 0); }
+  .dropcap::first-letter { font-family: 'Playfair Display', serif; float: left; font-size: 3.6rem; line-height: .85; padding: .35rem .6rem 0 0; color: #34d399; font-weight: 700; }
+  ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-thumb { background:#2c3b34; border-radius: 8px; }
+  @media (max-width: 640px) { .ticker-track { animation-duration: 55s; } }
+  @media (prefers-reduced-motion: reduce) { .ticker-track, .floaty, .live-dot, .caret { animation: none; } .reveal { opacity:1; transform:none; transition:none; } }
+</style>
+</head>
+
+<body class="bg-aurora font-sans min-h-screen">
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 glass-strong" x-data="{ open:false, now:'', date:'' }"
+  x-init="
+    const tick=()=>{const d=new Date();
+      date=new Intl.DateTimeFormat('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(d);
+      now=d.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit',second:'2-digit'}).replace(/\./g,':');};
+    tick(); setInterval(tick,1000);">
+  <div class="hidden sm:block border-b border-white/5 bg-black/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex items-center justify-between gap-3 text-xs text-sage-300">
+      <span class="truncate" x-text="date"></span>
+      <span class="shrink-0 tabular-nums" x-text="now + ' WIB'"></span>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+    <a href="#top" class="flex items-center gap-3 min-w-0">
+      <span class="shrink-0 grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-emerald2-400 to-emerald2-600 text-ink font-extrabold text-sm shadow-lg shadow-emerald-500/20">M&amp;A</span>
+      <span class="leading-tight min-w-0">
+        <span class="block font-serif font-bold text-base sm:text-lg truncate">M&amp;A Newsroom</span>
+        <span class="block text-[10px] sm:text-[11px] tracking-[.22em] uppercase text-sage-400 truncate">Tegalsari Update</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1 text-sm">
+      <a class="px-3 py-2 rounded-lg text-sage-300 hover:text-white hover:bg-white/5 transition" href="#video">Video</a>
+      <a class="px-3 py-2 rounded-lg text-sage-300 hover:text-white hover:bg-white/5 transition" href="#naskah">Naskah</a>
+      <a class="px-3 py-2 rounded-lg text-sage-300 hover:text-white hover:bg-white/5 transition" href="#anchor">Anchor</a>
+    </nav>
+
+    <div class="flex items-center gap-2 shrink-0">
+      <span class="inline-flex items-center gap-2 rounded-full bg-red-500/10 border border-red-500/30 px-2.5 py-1 text-[10px] sm:text-xs font-semibold text-red-300">
+        <span class="live-dot w-2 h-2 rounded-full bg-red-500"></span>
+        <span>LIVE <span class="hidden sm:inline">· Exclusive Report</span></span>
+      </span>
+      <button @click="open=!open" class="md:hidden grid place-items-center w-10 h-10 rounded-lg glass" aria-label="Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div x-show="open" x-collapse.duration.200ms x-cloak @click.outside="open=false" class="md:hidden border-t border-white/5">
+    <div class="px-4 py-3 grid gap-1 text-sm">
+      <p class="text-xs text-sage-400 pb-2" x-text="date + ' · ' + now + ' WIB'"></p>
+      <a @click="open=false" class="px-3 py-2.5 rounded-lg hover:bg-white/5" href="#video">Video Pawarta</a>
+      <a @click="open=false" class="px-3 py-2.5 rounded-lg hover:bg-white/5" href="#naskah">Teks Pawarta</a>
+      <a @click="open=false" class="px-3 py-2.5 rounded-lg hover:bg-white/5" href="#anchor">Meet The Anchors</a>
+    </div>
+  </div>
+</header>
+
+<!-- Ticker -->
+<div class="ticker overflow-hidden border-b border-white/5 bg-emerald2-600/10">
+  <div class="max-w-7xl mx-auto flex items-center">
+    <span class="shrink-0 bg-emerald2-500 text-ink text-[10px] sm:text-xs font-bold tracking-widest uppercase px-3 py-2">Pawarta Anyar</span>
+    <div class="overflow-hidden flex-1 min-w-0">
+      <div class="ticker-track text-xs sm:text-sm text-sage-300 py-2">
+        <span class="px-6 whitespace-nowrap">♻ Galon bekas malih dados pot kembang estetik</span>
+        <span class="px-6 whitespace-nowrap">🌿 KWT Kawite Lestari, Dusun Tegalsari, Pakem, Yogyakarta</span>
+        <span class="px-6 whitespace-nowrap">🎙 Dipun aturaken dening Muafa Albayhaqi &amp; Alvaro Hauzan Putra Harkl</span>
+        <span class="px-6 whitespace-nowrap">📰 M&amp;A Newsroom · Tegalsari Update</span>
+        <span class="px-6 whitespace-nowrap">♻ Galon bekas malih dados pot kembang estetik</span>
+        <span class="px-6 whitespace-nowrap">🌿 KWT Kawite Lestari, Dusun Tegalsari, Pakem, Yogyakarta</span>
+        <span class="px-6 whitespace-nowrap">🎙 Dipun aturaken dening Muafa Albayhaqi &amp; Alvaro Hauzan Putra Harkl</span>
+        <span class="px-6 whitespace-nowrap">📰 M&amp;A Newsroom · Tegalsari Update</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden">
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 lg:py-28 grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 min-w-0"
+         x-data="{
+           phrases:['Sugeng Rawuh','Wilujeng Sumping','Sugeng Enjing, Pirsawan'],
+           text:'', i:0, j:0, del:false,
+           step(){
+             const p=this.phrases[this.i];
+             if(!this.del){ this.text=p.slice(0,++this.j); if(this.j===p.length){ this.del=true; return setTimeout(()=>this.step(),1800);} }
+             else { this.text=p.slice(0,--this.j); if(this.j===0){ this.del=false; this.i=(this.i+1)%this.phrases.length; } }
+             setTimeout(()=>this.step(), this.del?40:90);
+           }
+         }" x-init="step()">
+      <span class="inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 text-[11px] sm:text-xs tracking-[.18em] uppercase text-emerald2-400 font-semibold">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald2-400"></span> Pawarta Eksklusif · Basa Jawi
+      </span>
+      <h1 class="mt-5 font-serif font-extrabold leading-[1.08] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl break-words">
+        <span class="block bg-gradient-to-r from-white via-sage-300 to-emerald2-400 bg-clip-text text-transparent min-h-[1.2em]"><span x-text="text"></span><span class="caret"></span></span>
+        <span class="block text-white/90 text-[0.62em] mt-2">ing Portal Pawarta Eksklusif</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-base sm:text-lg text-sage-300 leading-relaxed">
+        Saking galon bekas dados pot kembang ingkang endah. Tiyang-tiyang estri Kelompok Wanita Tani <strong class="text-white font-semibold">Kawite Lestari</strong> ing Dusun Tegalsari, Pakem, Ngayogyakarta, mbuktekaken bilih sampah saged malih dados berkah.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="#video" class="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald2-500 to-emerald2-400 text-ink font-semibold px-6 py-3.5 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Tonton Pawarta
+        </a>
+        <a href="#naskah" class="inline-flex items-center justify-center gap-2 rounded-xl glass px-6 py-3.5 font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition">Waos Naskah</a>
+      </div>
+    </div>
+
+    <!-- Hero card -->
+    <div class="lg:col-span-5 min-w-0">
+      <div class="glass-strong rounded-3xl p-5 sm:p-6 ">
+        <div class="flex items-center justify-between text-xs text-sage-400 uppercase tracking-widest">
+          <span>Ringkesan</span><span class="text-emerald2-400">Tegalsari Update</span>
+        </div>
+        <div class="mt-4 grid grid-cols-3 gap-2 sm:gap-3 text-center">
+          <div class="rounded-2xl bg-white/5 p-3 sm:p-4"><div class="text-2xl sm:text-3xl">♻️</div><div class="mt-1 text-[11px] sm:text-xs text-sage-300">Olah Limbah</div></div>
+          <div class="rounded-2xl bg-white/5 p-3 sm:p-4"><div class="text-2xl sm:text-3xl">🌷</div><div class="mt-1 text-[11px] sm:text-xs text-sage-300">Pot Estetik</div></div>
+          <div class="rounded-2xl bg-white/5 p-3 sm:p-4"><div class="text-2xl sm:text-3xl">👩‍🌾</div><div class="mt-1 text-[11px] sm:text-xs text-sage-300">KWT</div></div>
+        </div>
+        <dl class="mt-5 space-y-3 text-sm">
+          <div class="flex justify-between gap-4 border-b border-white/5 pb-2"><dt class="text-sage-400 shrink-0">Panggenan</dt><dd class="text-right min-w-0">Dusun Tegalsari, Pakem, Yogyakarta</dd></div>
+          <div class="flex justify-between gap-4 border-b border-white/5 pb-2"><dt class="text-sage-400 shrink-0">Kelompok</dt><dd class="text-right min-w-0">KWT Kawite Lestari</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-sage-400 shrink-0">Anchor</dt><dd class="text-right min-w-0">Muafa &amp; Alvaro</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section id="video" class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 scroll-mt-24 reveal"
+  x-data="{
+    mode: SITE.youtubeId ? 'yt' : 'none', yt: SITE.youtubeId || '', src:'', input:'', err:'',
+    parse(u){
+      const m=u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/))([\w-]{11})/);
+      return m?m[1]:null;
+    },
+    setYT(){
+      const id=this.parse(this.input.trim());
+      if(!id){ this.err='Link YouTube mboten sah. Coba tempel link lengkap.'; return; }
+      this.err=''; this.yt=id; this.mode='yt';
+    },
+    setFile(e){
+      const f=e.target.files[0]; if(!f) return;
+      if(this.src) URL.revokeObjectURL(this.src);
+      this.src=URL.createObjectURL(f); this.mode='file'; this.err='';
+    },
+    reset(){ this.mode='none'; this.yt=''; this.input=''; this.err=''; }
+  }">
+  <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
+    <div class="min-w-0">
+      <p class="text-xs tracking-[.25em] uppercase text-emerald2-400 font-semibold">Video Showcase</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2">Siaran Pawarta</h2>
+    </div>
+    <p class="text-sm text-sage-400 max-w-md">Tempel link YouTube utawi unggah berkas video ing ngandhap supados pawarta tayang ing layar TV.</p>
+  </div>
+
+  <!-- TV frame -->
+  <div class="mx-auto max-w-5xl">
+    <div class="rounded-[1.5rem] sm:rounded-[2rem] p-2.5 sm:p-4 bg-gradient-to-b from-[#2b3731] to-[#121a16] ring-1 ring-white/10">
+      <div class="relative rounded-xl sm:rounded-2xl overflow-hidden bg-black aspect-video">
+        <template x-if="mode==='yt'">
+          <iframe loading="lazy" class="absolute inset-0 w-full h-full" :src="'https://www.youtube.com/embed/'+yt+'?rel=0'" title="Pawarta Basa Jawi"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </template>
+        <template x-if="mode==='file'">
+          <video class="absolute inset-0 w-full h-full object-contain bg-black" :src="src" controls playsinline preload="metadata"></video>
+        </template>
+        <template x-if="mode==='none'">
+          <div class="absolute inset-0 flex flex-col">
+            <div class="bars h-[62%] opacity-80"></div>
+            <div class="flex-1 bg-gradient-to-b from-[#0b0f0d] to-[#16201b]"></div>
+            <div class="absolute inset-0 grid place-items-center p-4">
+              <div class="glass-strong rounded-2xl px-5 py-4 text-center max-w-[90%]">
+                <div class="mx-auto w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald2-500 text-ink grid place-items-center shadow-lg shadow-emerald-500/30">
+                  <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <p class="mt-3 font-semibold text-sm sm:text-base">Video dereng kasedhiya</p>
+                <p class="text-xs sm:text-sm text-sage-300 mt-1">Tambah video pawarta ing ngandhap</p>
+              </div>
+            </div>
+          </div>
+        </template>
+        <!-- lower third -->
+        <div class="pointer-events-none absolute left-0 bottom-0 right-0 z-10 hidden sm:flex items-stretch">
+          <div class="bg-emerald2-500 text-ink font-extrabold text-xs px-3 py-1.5 tracking-widest">M&amp;A</div>
+          <div class="bg-black/80 text-xs px-3 py-1.5 truncate">Galon Bekas Dados Pot Kembang · KWT Kawite Lestari</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-between px-2 pt-2.5 sm:pt-3 text-[10px] sm:text-xs text-sage-400">
+        <span class="inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald2-400"></span> M&amp;A Newsroom TV</span>
+        <span class="tracking-widest">HD · 16:9</span>
+      </div>
+    </div>
+    <div class="mx-auto w-1/3 h-2 sm:h-3 rounded-b-xl bg-gradient-to-b from-[#222d27] to-[#0e1411]"></div>
+    
+    <!-- Controls -->
+    <div class="mt-8 glass rounded-2xl p-4 sm:p-5 grid gap-4 md:grid-cols-2">
+      <div class="min-w-0">
+        <label class="text-xs uppercase tracking-widest text-sage-400">Link YouTube</label>
+        <div class="mt-2 flex flex-col sm:flex-row gap-2">
+          <input x-model="input" @keydown.enter="setYT()" type="url" placeholder="https://youtu.be/xxxxxxxxxxx"
+            class="min-w-0 w-full flex-1 rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-sm placeholder:text-sage-500/60 focus:outline-none focus:ring-2 focus:ring-emerald2-500/60">
+          <button @click="setYT()" class="rounded-xl bg-emerald2-500 text-ink font-semibold px-5 py-3 text-sm hover:bg-emerald2-400 transition">Tayangaken</button>
+        </div>
+        <p x-show="err" x-text="err" class="mt-2 text-xs text-red-300" x-cloak></p>
+      </div>
+      <div class="min-w-0">
+        <label class="text-xs uppercase tracking-widest text-sage-400">Utawi unggah video</label>
+        <div class="mt-2 flex flex-col sm:flex-row gap-2">
+          <label class="flex-1 min-w-0 cursor-pointer rounded-xl border border-dashed border-white/20 px-4 py-3 text-sm text-sage-300 hover:bg-white/5 transition truncate text-center sm:text-left">
+            Pilih berkas video (.mp4 / .webm)
+            <input type="file" accept="video/*" class="hidden" @change="setFile($event)">
+          </label>
+          <button @click="reset()" class="rounded-xl glass px-5 py-3 text-sm hover:bg-white/10 transition">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NASKAH ============ -->
+<section id="naskah" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 scroll-mt-24 reveal"
+  x-data="{
+    size:1, tr:false, copied:false,
+    copy(){
+      const t=document.getElementById('naskah-body').innerText;
+      (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{this.copied=true;setTimeout(()=>this.copied=false,1800)}).catch(()=>{});
+    }
+  }">
+  <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+    <div class="min-w-0">
+      <p class="text-xs tracking-[.25em] uppercase text-emerald2-400 font-semibold">Teks Pawarta</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2">Naskah Pawarta</h2>
+    </div>
+    <div class="flex flex-wrap items-center gap-2">
+      <div class="inline-flex rounded-xl glass overflow-hidden text-sm">
+        <button @click="size=Math.max(0,size-1)" class="px-3.5 py-2 hover:bg-white/10" aria-label="Kecilkan">A−</button>
+        <button @click="size=Math.min(2,size+1)" class="px-3.5 py-2 hover:bg-white/10 border-l border-white/10" aria-label="Besarkan">A+</button>
+      </div>
+      <button @click="tr=!tr" :class="tr?'bg-emerald2-500 text-ink':'glass'" class="rounded-xl px-4 py-2 text-sm font-medium transition">Terjemahan Indonesia</button>
+      <button @click="copy()" class="rounded-xl glass px-4 py-2 text-sm hover:bg-white/10 transition" x-text="copied?'Tersalin ✓':'Salin Naskah'"></button>
+    </div>
+  </div>
+
+  <article class="rounded-3xl bg-[#ece7d6] text-[#1d2420]  overflow-hidden">
+    <div class="bg-[#1d2a24] text-[#ece7d6] px-5 sm:px-10 py-4 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs tracking-widest uppercase">
+      <span class="font-semibold">M&amp;A Newsroom · Tegalsari Update</span>
+      <span class="text-emerald2-400">Pawarta Lingkungan</span>
+    </div>
+    <div class="px-5 sm:px-10 lg:px-14 py-8 sm:py-12">
+      <p class="text-xs tracking-[.25em] uppercase text-emerald2-600 font-bold">Pakem, Ngayogyakarta</p>
+      <h3 class="font-serif font-extrabold leading-tight mt-3 text-2xl sm:text-4xl lg:text-5xl break-words">
+        Galon Bekas Malih Dados Pot Kembang Estetik, KWT Kawite Lestari Tegalsari Kreatif Ngolah Sampah
+      </h3>
+      <p class="mt-4 text-sm text-[#4b5a52] italic border-t border-b border-[#1d2a24]/15 py-3">
+        Kaaturaken dening Muafa Albayhaqi &amp; Alvaro Hauzan Putra Harkl · Praktik Siaran Pawarta Basa Jawi
+      </p>
+
+      <div id="naskah-body" class="mt-8 grid lg:grid-cols-2 gap-x-10 gap-y-6 leading-[1.85] text-justify hyphens-auto break-words transition-all"
+        :class="size===0?'text-[15px]':size===1?'text-base sm:text-[17px]':'text-lg sm:text-xl'">
+
+        <div class="space-y-5 min-w-0">
+          <div class="rounded-xl bg-white/60 border-l-4 border-emerald2-600 p-4">
+            <p class="text-[11px] uppercase tracking-widest font-bold text-emerald2-600 mb-1">Pambuka · Muafa</p>
+            <p>“Sugeng enjing, pirsawan ingkang minulya. Kula Muafa Albayhaqi.”</p>
+          </div>
+          <div class="rounded-xl bg-white/60 border-l-4 border-sage-500 p-4">
+            <p class="text-[11px] uppercase tracking-widest font-bold text-[#5c7a60] mb-1">Pambuka · Alvaro</p>
+            <p>“Lan kula Alvaro Hauzan Putra Harkl. Wonten ing M&amp;A Newsroom, kula kalihan badhe ngaturaken pawarta saking Dusun Tegalsari, Pakem, Ngayogyakarta.”</p>
+          </div>
+          <p class="dropcap">Sampah plastik, mliginipun galon bekas toya mineral, asring namung dados tumpukan ingkang ngregedi lingkungan. Nanging, ing Dusun Tegalsari, Pakem, Ngayogyakarta, tiyang-tiyang estri saking Kelompok Wanita Tani (KWT) Kawite Lestari saged ngowahi galon bekas menika dados pot kembang ingkang endah.</p>
+          <p x-show="tr" x-collapse class="rounded-lg bg-emerald2-500/10 border border-emerald2-600/30 p-3 text-sm italic text-[#35503f]" x-cloak>
+            <strong>Indonesia:</strong> Sampah plastik, terutama galon air mineral bekas, sering hanya menjadi tumpukan yang merusak lingkungan. Namun di Dusun Tegalsari, ibu-ibu KWT Kawite Lestari mampu mengubah galon bekas itu menjadi pot bunga yang indah.
+          </p>
+        </div>
+
+        <div class="space-y-5 min-w-0">
+          <p>Galon-galon bekas menika dipun resiki, dipun pangkas miturut wujud ingkang dipun kajengaken, lajeng dipun pulas cat warni-warni sarta dipun hias kanthi motif ingkang nengsemaken. Asilipun, pot kembang ingkang katingal ayu, kiyat, lan trep kangge ngrengga pekarangan griya.</p>
+          <p x-show="tr" x-collapse class="rounded-lg bg-emerald2-500/10 border border-emerald2-600/30 p-3 text-sm italic text-[#35503f]" x-cloak>
+            <strong>Indonesia:</strong> Galon-galon itu dibersihkan, dipotong sesuai bentuk yang diinginkan, lalu dicat warna-warni dan dihias motif menarik. Hasilnya pot bunga yang cantik, kuat, dan cocok untuk menghias pekarangan rumah.
+          </p>
+          <p>Kajawi nyuda sampah plastik, kegiatan menika ugi nuwuhaken kreativitas, nguwataken karukunan antawisipun para anggota, sarta mbikak kasempatan ngangkat bab ekonomi warga. Pot-pot kala wau saged dipun enggo piyambak kangge nandur kembang, sayuran, utawi tanaman obat.</p>
+          <p x-show="tr" x-collapse class="rounded-lg bg-emerald2-500/10 border border-emerald2-600/30 p-3 text-sm italic text-[#35503f]" x-cloak>
+            <strong>Indonesia:</strong> Selain mengurangi sampah plastik, kegiatan ini menumbuhkan kreativitas, mempererat kerukunan anggota, dan membuka peluang ekonomi warga. Pot-pot itu dapat dipakai sendiri untuk menanam bunga, sayuran, atau tanaman obat.
+          </p>
+          <div class="rounded-xl bg-white/60 border-l-4 border-emerald2-600 p-4">
+            <p class="text-[11px] uppercase tracking-widest font-bold text-emerald2-600 mb-1">Panutup · Muafa &amp; Alvaro</p>
+            <p>“Mekaten pawarta saking Dusun Tegalsari. Muga-muga kegiatan menika saged dados tuladha tumrap warga sanesipun. Matur nuwun, kula pamitan. Wassalamualaikum wr. wb.”</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-8 text-xs text-[#6a776f] border-t border-[#1d2a24]/15 pt-4">
+        Cathetan: Naskah menika minangka rancangan. Panjenengan saged nyunting tembung sesuai isi video pawarta.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- ============ ANCHORS ============ -->
+<section id="anchor" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 scroll-mt-24 reveal"
+  x-data="{
+    anchors:[
+      { name:'Muafa Albayhaqi', initials:'MA', role:'News Anchor', photo: SITE.photos[0] || '', bio:'Mbukak siaran lan nuntun alur pawarta kanthi swanten ingkang tenang lan cetha.' },
+      { name:'Alvaro Hauzan Putra Harkl', initials:'AH', role:'News Anchor', photo: SITE.photos[1] || '', bio:'Nglajengaken laporan lan nyimpulaken pawarta kanthi basa Jawi ingkang runtut.' }
+    ],
+    setPhoto(i,e){ const f=e.target.files[0]; if(!f) return; this.anchors[i].photo=URL.createObjectURL(f); }
+  }">
+  <div class="text-center max-w-2xl mx-auto mb-10">
+    <p class="text-xs tracking-[.25em] uppercase text-emerald2-400 font-semibold">Meet The Anchors</p>
+    <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2">Presenter Pawarta</h2>
+    <p class="mt-3 text-sm text-sage-400">Klik foto kangge nyobi ngganti (namung katingal ing piranti panjenengan).</p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+    <template x-for="(a,i) in anchors" :key="i">
+      <div class="group relative glass-strong rounded-3xl p-5 sm:p-6 text-center overflow-hidden hover:-translate-y-1 transition-transform duration-300 min-w-0">
+        <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-emerald2-500/20 to-transparent"></div>
+        <label class="relative mx-auto block w-36 h-36 sm:w-40 sm:h-40 cursor-pointer">
+          <span class="absolute -inset-1.5 rounded-full bg-gradient-to-br from-emerald2-400 to-sage-500 opacity-70 group-hover:opacity-100 transition"></span>
+          <span class="relative block w-full h-full rounded-full overflow-hidden bg-slate2 ring-4 ring-ink">
+            <template x-if="a.photo"><img :src="a.photo" :alt="a.name" class="w-full h-full object-cover"></template>
+            <template x-if="!a.photo">
+              <svg viewBox="0 0 100 100" class="w-full h-full" aria-hidden="true">
+                <defs><linearGradient :id="'g'+i" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a2e"/><stop offset="1" stop-color="#0f1613"/></linearGradient></defs>
+                <rect width="100" height="100" :fill="'url(#g'+i+')'"/>
+                <circle cx="50" cy="38" r="17" fill="#7a9e7e" opacity=".85"/>
+                <path d="M16 100c2-24 18-34 34-34s32 10 34 34z" fill="#7a9e7e" opacity=".85"/>
+                <path d="M42 66l8 10 8-10" fill="#e9e4d4"/>
+              </svg>
+            </template>
+          </span>
+          <input type="file" accept="image/*" class="hidden" @change="setPhoto(i,$event)">
+          <span class="absolute bottom-1 right-1 grid place-items-center w-9 h-9 rounded-full bg-emerald2-500 text-ink shadow-lg ring-2 ring-ink">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8a2 2 0 012-2h2l1.5-2h7L17 6h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2zM12 17a4 4 0 100-8 4 4 0 000 8z"/></svg>
+          </span>
+        </label>
+        <span class="relative inline-flex items-center gap-1.5 mt-5 rounded-full bg-emerald2-500/15 border border-emerald2-500/40 text-emerald2-400 text-[11px] font-bold tracking-widest uppercase px-3 py-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald2-400"></span><span x-text="a.role"></span>
+        </span>
+        <h3 class="relative font-serif text-xl sm:text-2xl font-bold mt-3 break-words" x-text="a.name"></h3>
+        <p class="relative text-sm text-sage-300 mt-3 leading-relaxed" x-text="a.bio"></p>
+        <div class="relative mt-4 pt-4 border-t border-white/10 text-xs text-sage-400 tracking-wide">M&amp;A Newsroom · Tegalsari Update</div>
+      </div>
+    </template>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="mt-10 border-t border-white/10 bg-black/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 grid gap-6 md:grid-cols-3 text-center md:text-left">
+    <div class="min-w-0">
+      <div class="flex items-center justify-center md:justify-start gap-3">
+        <span class="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-emerald2-400 to-emerald2-600 text-ink font-extrabold text-sm">M&amp;A</span>
+        <span class="font-serif font-bold text-lg">M&amp;A Newsroom</span>
+      </div>
+      <p class="mt-3 text-sm text-sage-400">Tegalsari Update · Pawarta saking Dusun Tegalsari, Pakem, Yogyakarta.</p>
+    </div>
+    <div class="text-sm text-sage-300 min-w-0">
+      <p class="font-semibold text-white mb-2">Tim Siaran</p>
+      <p>Muafa Albayhaqi</p>
+      <p>Alvaro Hauzan Putra Harkl</p>
+    </div>
+    <div class="text-sm text-sage-300 min-w-0">
+      <p class="font-semibold text-white mb-2">Navigasi</p>
+      <div class="flex md:flex-col justify-center md:justify-start gap-4 md:gap-1">
+        <a class="hover:text-emerald2-400 transition" href="#video">Video</a>
+        <a class="hover:text-emerald2-400 transition" href="#naskah">Naskah</a>
+        <a class="hover:text-emerald2-400 transition" href="#anchor">Anchor</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/5 px-4 py-5 text-center text-xs text-sage-400 leading-relaxed">
+    © <span id="yr">2026</span> M&amp;A Newsroom · Tugas Sekolah Mata Pelajaran Basa Jawi · Praktik Siaran Pawarta.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }),{threshold:.08});
+  document.addEventListener('DOMContentLoaded',()=>document.querySelectorAll('.reveal').forEach(el=>io.observe(el)));
+</script>
+<style>[x-cloak]{display:none !important}</style>
+</body>
+</html>
